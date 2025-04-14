@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Generated Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arial:wght@700&display=swap');
+        
+        .arial-bold {
+            font-family: 'Arial', sans-serif;
+            font-weight: 700;
+        }
+        
+        .dropdown-content {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .box {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-100 to-blue-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <h1 class="arial-bold text-4xl md:text-5xl text-center text-purple-800 mb-12">
+            This is made with ai lmao, not original work
+        </h1>
+        
+        <!-- Boxes Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Box 1 -->
+            <div class="box-container">
+                <div onclick="toggleDropdown(this)" class="box bg-white rounded-xl p-6 shadow-md cursor-pointer text-center text-purple-600 font-medium text-lg hover:bg-purple-50">
+                    ai generated lmao.
+                </div>
+                <div class="dropdown-content bg-white mt-2 rounded-lg p-4 shadow-lg">
+                    <p class="text-gray-700 font-mono">asuikdhasiudhuiasdhuihasd</p>
+                </div>
+            </div>
+            
+            <!-- Box 2 -->
+            <div class="box-container">
+                <div onclick="toggleDropdown(this)" class="box bg-white rounded-xl p-6 shadow-md cursor-pointer text-center text-purple-600 font-medium text-lg hover:bg-purple-50">
+                    ai generated lmao.
+                </div>
+                <div class="dropdown-content bg-white mt-2 rounded-lg p-4 shadow-lg">
+                    <p class="text-gray-700 font-mono">asuikdhasiudhuiasdhuihasd</p>
+                </div>
+            </div>
+            
+            <!-- Box 3 -->
+            <div class="box-container">
+                <div onclick="toggleDropdown(this)" class="box bg-white rounded-xl p-6 shadow-md cursor-pointer text-center text-purple-600 font-medium text-lg hover:bg-purple-50">
+                    ai generated lmao.
+                </div>
+                <div class="dropdown-content bg-white mt-2 rounded-lg p-4 shadow-lg">
+                    <p class="text-gray-700 font-mono">asuikdhasiudhuiasdhuihasd</p>
+                </div>
+            </div>
+            
+            <!-- Box 4 -->
+            <div class="box-container">
+                <div onclick="toggleDropdown(this)" class="box bg-white rounded-xl p-6 shadow-md cursor-pointer text-center text-purple-600 font-medium text-lg hover:bg-purple-50">
+                    ai generated lmao.
+                </div>
+                <div class="dropdown-content bg-white mt-2 rounded-lg p-4 shadow-lg">
+                    <p class="text-gray-700 font-mono">asuikdhasiudhuiasdhuihasd</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(element) {
+            // Get the dropdown content associated with the clicked box
+            const dropdown = element.nextElementSibling;
+            
+            // Close all other dropdowns first
+            document.querySelectorAll('.dropdown-content').forEach(dd => {
+                if (dd !== dropdown && dd.style.display === 'block') {
+                    dd.style.display = 'none';
+                }
+            });
+            
+            // Toggle the clicked dropdown
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        }
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.box-container')) {
+                document.querySelectorAll('.dropdown-content').forEach(dd => {
+                    dd.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
